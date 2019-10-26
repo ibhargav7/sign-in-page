@@ -3,20 +3,30 @@
 <title>log in</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 </head>
-<body>
-<div>
-    <h1>Log In</h1>
-    <form  action="/submit" method="POST">
-    <label>Email</label>
-    <input type='email' id='email' name= 'email' "required maxlength" = "50" required><br>
-    <label>Password</label>
-    <input type='password' id='password' name='password' 'required maxlength' = '24' required><br>
-    <input type="submit" id='submit1' value="Login"><br>
-    </form>
+<body style="background-color:#007bffd1;padding-top:60px;padding-bottom:60px">
 
-    <button type="button" id="submit" onclick= "location.href='https://localhost:3000/'">Sign In</button><br>
+
+<div class="card" style="width: 25rem;margin:auto">
+  <div class="card-body">
+    <h1 class="card-title" style="text-align:center" >Login</h1><br>
+
+    <form  action="/submit" method="POST">
+    <div class="form-group">
+    
+    <label>Email</label>
+    <input type='email' id='email' name= 'email' class="form-control" "required maxlength" = "50" required>
+    </div>
+    <div class="form-group">
+    <label>Password</label>
+    <input type='password' id='password' name='password' class="form-control" 'required maxlength' = '24' required>
+    </div>
+    <input type="submit" id='submit1' value="Login" class="btn btn-primary">
+    </form>
+    <div>
+    <p>New to this site then: <p>
+
+    <button type="button" id="submit" onclick= "location.href='http://localhost:3000/'" class="btn btn-primary">Sign In</button>
     </div>
 </div>
 </body>

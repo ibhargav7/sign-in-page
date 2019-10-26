@@ -15,9 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 app.get('/', function(request, response) {
     response.sendFile(path.join(__dirname + '/public/index.html'));
 });
-app.get('/login', function(req, res) {
-    res.sendFile(path.join(__dirname + '/public/index1.html'))
-})
+
 
 
 
@@ -58,10 +56,14 @@ app.post("/submit", (req, res) => {
 
 
 });
-app.get('/submit', function(request, response) {
-    response.sendFile(path.join(__dirname + '/public/success.html'));
+app.get('/submit', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/success.html'));
 
 });
+app.get('/login', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/index1.html'))
+});
+
 app.post("/login/success", function(req, res) {
     var email1 = req.body.email;
     var password1 = req.body.password;
