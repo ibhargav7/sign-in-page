@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>sign in </title>
+<link rel="stylesheet" href='/home/bhargav/practice/myapp/public/index.css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div>
+    <form  action="/submit" method="POST">
+    <h1>Sign Up</h1>
+        <label for ="t1">Name :</label>
+        <input type='text' id='name' name= 'name' "required maxlength" = "40" required><br>
+        <div>
+        <label for="t2">Email </label>
+        <input type='email' id = 'email' name= 'email'  "required maxlength" = "40" required><br>
+        <span class="error" aria-live="polite"></span>
+        </div>
+        <label for="t5">Password :</label>
+        <input type='password' id ='password' name='password'required ><br>
+        <label for="t6">Confirm password :</label>
+        <input type='password' id ='passwordc' name='passwordc' required><br>
+        <label for="t3">Phone no. :</label>
+        <input type='text' id ='phoneno' name='phoneno'  "required maxlength" = "15" required><br>
+        <label for="t4">Country :</label>
+        <input type='text' id='country' name='country'  "required maxlength" = "40" required><br>
+        <input type="submit" id="submit" value="submit">
+    </form>
+    <login action="/login" method="POST">
+      <input type="submit" value="login">
+
+
+    </login>
+</div>
+<script>
+function check(){
+
+
+var pass1 = document.getElementById('password').value
+var pass2 =  document.getElementById('passwordc').value 
+
+var email = document.getElementById('email');
+var error = document.querySelector('.error');
+
+email.addEventListener("input", function (event) {
+  // Each time the user types something, we check if the
+  // email field is valid.
+  if (email.validity.valid) {
+    // In case there is an error message visible, if the field
+    // is valid, we remove the error message.
+    error.innerHTML = ""; // Reset the content of the message
+    error.className = "error"; // Reset the visual state of the message
+  }
+}, false);
+form.addEventListener("submit", function (event) {
+  // Each time the user tries to send the data, we check
+  // if the email field is valid.
+  if (!email.validity.valid) {
+    
+    // If the field is not valid, we display a custom
+    // error message.
+    error.innerHTML = "enter a valid mail Id";
+    error.className = "error active";
+    // And we prevent the form from being sent by canceling the event
+    event.preventDefault();
+  }
+}, false);
+</script>
+</body>
+</html>
